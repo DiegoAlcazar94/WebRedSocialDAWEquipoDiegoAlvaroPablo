@@ -1,0 +1,16 @@
+<article class="card h-100 position-relative overflow-hidden neon-hover">
+  <div class="project-img"
+       [style.background-image]="'url(' + image + ')'">
+  </div>
+  <div class="card-body">
+    <h5 class="fw-bold mb-2">{{ title }}</h5>
+    <p class="text-secondary small mb-3">{{ description }}</p>
+    <div class="d-flex gap-2 flex-wrap mb-3">
+      <span *ngFor="let tag of tags" class="badge bg-primary">{{ tag }}</span>
+    </div>
+    <a [routerLink]="['/proyectos', id]" class="btn btn-outline-primary btn-sm w-100">
+      <span class="material-symbols-outlined align-middle me-1" style="font-size:16px">visibility</span>
+      Ver detalle
+    </a>
+  </div>
+</article>

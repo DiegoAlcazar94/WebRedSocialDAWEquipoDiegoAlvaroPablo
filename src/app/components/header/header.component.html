@@ -1,0 +1,61 @@
+<header class="sticky-top glass border-bottom">
+  <div class="container-xl py-3">
+    <div class="row align-items-center g-2 g-md-3">
+
+      <!-- Logo -->
+      <div class="col-6 col-sm-5 col-md-auto">
+        <div class="d-flex align-items-center gap-2 gap-md-3">
+          <img src="https://www.micole.net/imagenes/colegio/logo/32624/progresa_200.png"
+               alt="Logo THE PROGRESA" style="width:40px;">
+          <h2 class="mb-0 fw-bold d-none d-sm-block">THE PROGRESA</h2>
+        </div>
+      </div>
+
+      <!-- Navigation Desktop -->
+      <div class="col d-none d-lg-block">
+        <nav class="d-flex justify-content-center gap-3">
+          <a class="nav-link fw-bold" routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+          <a class="nav-link" routerLink="/proyectos" routerLinkActive="text-primary">Proyectos</a>
+          <a class="nav-link" routerLink="/comunidad" routerLinkActive="text-primary">Comunidad</a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="text-primary">Nosotros</a>
+          <a class="nav-link" routerLink="/contacto" routerLinkActive="text-primary">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Botones Login/Registro Desktop -->
+      <div class="col-auto d-none d-lg-flex gap-2">
+        <a routerLink="/login" class="btn btn-outline-primary btn-sm">Iniciar sesión</a>
+        <a routerLink="/registro" class="btn btn-primary btn-sm">Registrarse</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="col-auto d-lg-none ms-auto">
+        <button class="btn btn-outline-primary btn-sm" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="d-flex flex-column gap-3">
+      <a class="nav-link fw-bold" routerLink="/" routerLinkActive="text-primary" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+      <a class="nav-link" routerLink="/proyectos" routerLinkActive="text-primary">Proyectos</a>
+      <a class="nav-link" routerLink="/comunidad" routerLinkActive="text-primary">Comunidad</a>
+      <a class="nav-link" routerLink="/about" routerLinkActive="text-primary">Nosotros</a>
+      <a class="nav-link" routerLink="/contacto" routerLinkActive="text-primary">Contacto</a>
+      <hr>
+      <a routerLink="/login" class="btn btn-outline-primary">Iniciar sesión</a>
+      <a routerLink="/registro" class="btn btn-primary">Registrarse</a>
+    </nav>
+  </div>
+</div>

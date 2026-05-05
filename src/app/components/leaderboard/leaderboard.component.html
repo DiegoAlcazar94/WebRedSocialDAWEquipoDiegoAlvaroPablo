@@ -1,0 +1,11 @@
+<div class="card p-3 p-md-4 mb-3 rounded-3">
+  <h5 class="fw-bold mb-3">
+    <span class="material-symbols-outlined text-warning align-middle me-2">trophy</span>
+    Top Alumnos
+  </h5>
+  <div *ngFor="let leader of leaders" class="d-flex justify-content-between align-items-center py-2 border-bottom">
+    <span class="fw-bold">{{ leader.pos }}</span>
+    <strong>{{ leader.name }}</strong>
+    <span class="text-secondary">{{ leader.xp }}</span>
+  </div>
+</div>

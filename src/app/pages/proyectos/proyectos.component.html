@@ -1,0 +1,51 @@
+<main class="container-xl my-4 mb-5">
+
+  <div class="mb-4">
+    <h2 class="fw-bold">
+      <span class="material-symbols-outlined align-middle me-2">folder_open</span>
+      Todos los Proyectos
+    </h2>
+    <p class="text-secondary">Explora todos los proyectos desarrollados por los alumnos de Progresa Digitech FP.</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="card p-3 mb-4 rounded-3">
+    <div class="d-flex flex-wrap gap-2">
+      <button
+        *ngFor="let filtro of filtros"
+        class="btn btn-sm"
+        [class.btn-primary]="filtroActivo === filtro"
+        [class.btn-outline-primary]="filtroActivo !== filtro"
+        (click)="filtrar(filtro)">
+        {{ filtro }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Contador -->
+  <p class="text-secondary mb-3">
+    Mostrando <strong>{{ filteredProjects.length }}</strong> proyectos
+  </p>
+
+  <!-- Grid de proyectos -->
+  <div class="row g-3 g-md-4">
+    <div class="col-12 col-sm-6 col-lg-4" *ngFor="let project of filteredProjects">
+      <app-project-card
+        [id]="project.id"
+        [title]="project.title"
+        [description]="project.description"
+        [image]="project.image"
+        [tags]="project.tags">
+      </app-project-card>
+    </div>
+  </div>
+
+  <!-- Sin resultados -->
+  <div *ngIf="filteredProjects.length === 0" class="text-center py-5">
+    <span class="material-symbols-outlined text-secondary" style="font-size:80px">search_off</span>
+    <h4 class="fw-bold mt-3">No hay proyectos con ese filtro</h4>
+    <p class="text-secondary">Prueba con otro filtro o vuelve a All.</p>
+    <button class="btn btn-primary" (click)="filtrar('All')">Ver todos</button>
+  </div>
+
+</main>

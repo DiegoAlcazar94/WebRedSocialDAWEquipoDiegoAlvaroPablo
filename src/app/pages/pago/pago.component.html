@@ -1,0 +1,188 @@
+<main class="container my-4 mb-5">
+
+  <div class="mb-4">
+    <h2 class="fw-bold">
+      <span class="material-symbols-outlined align-middle me-2">payment</span>
+      Finalizar compra
+    </h2>
+    <p class="text-secondary">Completa los datos de envío y pago para adquirir el proyecto.</p>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Columna izquierda -->
+    <div class="col-lg-7">
+
+      <!-- Formulario de envío -->
+      <div class="card p-4 rounded-3 mb-4">
+        <h5 class="fw-bold mb-4">
+          <span class="material-symbols-outlined align-middle me-2">local_shipping</span>
+          Datos de envío
+        </h5>
+
+        <div class="row g-3">
+          <div class="col-6">
+            <label class="form-label fw-bold">Nombre</label>
+            <input type="text" class="form-control" placeholder="Tu nombre">
+          </div>
+          <div class="col-6">
+            <label class="form-label fw-bold">Apellidos</label>
+            <input type="text" class="form-control" placeholder="Tus apellidos">
+          </div>
+          <div class="col-12">
+            <label class="form-label fw-bold">Correo electrónico</label>
+            <input type="email" class="form-control" placeholder="tu@email.com">
+          </div>
+          <div class="col-12">
+            <label class="form-label fw-bold">Teléfono</label>
+            <input type="tel" class="form-control" placeholder="+34 600 000 000">
+          </div>
+          <div class="col-12">
+            <label class="form-label fw-bold">Dirección</label>
+            <input type="text" class="form-control" placeholder="Calle, número, piso">
+          </div>
+          <div class="col-6">
+            <label class="form-label fw-bold">Ciudad</label>
+            <input type="text" class="form-control" placeholder="Madrid">
+          </div>
+          <div class="col-6">
+            <label class="form-label fw-bold">Código postal</label>
+            <input type="text" class="form-control" placeholder="28001">
+          </div>
+          <div class="col-12">
+            <label class="form-label fw-bold">País</label>
+            <select class="form-select">
+              <option selected>España</option>
+              <option>México</option>
+              <option>Argentina</option>
+              <option>Colombia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de pago -->
+      <div class="card p-4 rounded-3">
+        <h5 class="fw-bold mb-4">
+          <span class="material-symbols-outlined align-middle me-2">credit_card</span>
+          Método de pago
+        </h5>
+
+        <!-- Selector de método -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <button class="btn"
+                  [class.btn-primary]="metodoPago === 'tarjeta'"
+                  [class.btn-outline-primary]="metodoPago !== 'tarjeta'"
+                  (click)="seleccionarMetodo('tarjeta')">
+            <span class="material-symbols-outlined align-middle me-1" style="font-size:18px">credit_card</span>
+            Tarjeta
+          </button>
+          <button class="btn"
+                  [class.btn-primary]="metodoPago === 'paypal'"
+                  [class.btn-outline-primary]="metodoPago !== 'paypal'"
+                  (click)="seleccionarMetodo('paypal')">
+            <span class="material-symbols-outlined align-middle me-1" style="font-size:18px">account_balance_wallet</span>
+            PayPal
+          </button>
+          <button class="btn"
+                  [class.btn-primary]="metodoPago === 'transferencia'"
+                  [class.btn-outline-primary]="metodoPago !== 'transferencia'"
+                  (click)="seleccionarMetodo('transferencia')">
+            <span class="material-symbols-outlined align-middle me-1" style="font-size:18px">account_balance</span>
+            Transferencia
+          </button>
+        </div>
+
+        <!-- Tarjeta -->
+        <div *ngIf="metodoPago === 'tarjeta'">
+          <div class="mb-3">
+            <label class="form-label fw-bold">Número de tarjeta</label>
+            <input type="text" class="form-control form-control-lg" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="row g-3">
+            <div class="col-6">
+              <label class="form-label fw-bold">Fecha de expiración</label>
+              <input type="text" class="form-control" placeholder="MM/AA">
+            </div>
+            <div class="col-6">
+              <label class="form-label fw-bold">CVV</label>
+              <input type="text" class="form-control" placeholder="123">
+            </div>
+          </div>
+          <div class="mt-3">
+            <label class="form-label fw-bold">Titular de la tarjeta</label>
+            <input type="text" class="form-control" placeholder="Nombre como aparece en la tarjeta">
+          </div>
+        </div>
+
+        <!-- PayPal -->
+        <div *ngIf="metodoPago === 'paypal'">
+          <div class="mb-3">
+            <label class="form-label fw-bold">Correo de PayPal</label>
+            <input type="email" class="form-control form-control-lg" placeholder="tu@paypal.com">
+          </div>
+          <div class="alert alert-primary" role="alert">
+            <span class="material-symbols-outlined align-middle me-2">info</span>
+            Serás redirigido a PayPal para completar el pago de forma segura.
+          </div>
+        </div>
+
+        <!-- Transferencia -->
+        <div *ngIf="metodoPago === 'transferencia'">
+          <div class="alert alert-primary" role="alert">
+            <span class="material-symbols-outlined align-middle me-2">info</span>
+            Realiza la transferencia a la siguiente cuenta bancaria:
+          </div>
+          <div class="card p-3 bg-card rounded-3">
+            <p class="mb-1"><strong>Banco:</strong> Banco Santander</p>
+            <p class="mb-1"><strong>IBAN:</strong> ES12 3456 7890 1234 5678 9012</p>
+            <p class="mb-0"><strong>Concepto:</strong> THE PROGRESA - Proyecto</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Resumen del pedido -->
+    <div class="col-lg-5">
+      <div class="card p-4 rounded-3 sticky-top" style="top:80px;">
+        <h5 class="fw-bold mb-4">
+          <span class="material-symbols-outlined align-middle me-2">receipt</span>
+          Resumen del pedido
+        </h5>
+
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+          <div>
+            <p class="fw-bold mb-0">Licencia de proyecto</p>
+            <small class="text-secondary">Acceso completo al código fuente</small>
+          </div>
+          <span class="fw-bold">49,99€</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-secondary">Subtotal</span>
+          <span>49,99€</span>
+        </div>
+        <div class="d-flex justify-content-between mb-2">
+          <span class="text-secondary">IVA (21%)</span>
+          <span>10,50€</span>
+        </div>
+        <div class="d-flex justify-content-between fw-bold fs-5 pt-3 border-top mt-2">
+          <span>Total</span>
+          <span class="text-primary">60,49€</span>
+        </div>
+
+        <button class="btn btn-primary btn-lg w-100 mt-4">
+          <span class="material-symbols-outlined align-middle me-2">lock</span>
+          Confirmar pago
+        </button>
+
+        <p class="text-secondary text-center small mt-3 mb-0">
+          <span class="material-symbols-outlined align-middle me-1" style="font-size:16px">shield</span>
+          Pago 100% seguro y encriptado
+        </p>
+      </div>
+    </div>
+
+  </div>
+</main>

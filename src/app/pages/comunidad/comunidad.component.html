@@ -1,0 +1,56 @@
+<main class="container-xl my-4 mb-5">
+
+  <div class="mb-4">
+    <h2 class="fw-bold">
+      <span class="material-symbols-outlined align-middle me-2">group</span>
+      Comunidad
+    </h2>
+    <p class="text-secondary">Conoce a los alumnos y desarrolladores de Progresa Digitech FP.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+      <div class="card p-3 text-center rounded-3">
+        <h3 class="fw-bold text-primary mb-1">48</h3>
+        <small class="text-secondary">Alumnos activos</small>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card p-3 text-center rounded-3">
+        <h3 class="fw-bold text-primary mb-1">120+</h3>
+        <small class="text-secondary">Proyectos</small>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card p-3 text-center rounded-3">
+        <h3 class="fw-bold text-primary mb-1">6</h3>
+        <small class="text-secondary">Equipos</small>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card p-3 text-center rounded-3">
+        <h3 class="fw-bold text-primary mb-1">3</h3>
+        <small class="text-secondary">Evaluaciones</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Miembros -->
+  <h4 class="fw-bold mb-3">Miembros destacados</h4>
+  <div class="row g-3">
+    <div class="col-12 col-sm-6 col-lg-4" *ngFor="let miembro of miembros">
+      <div class="card p-3 rounded-3 d-flex flex-row align-items-center gap-3">
+        <img [src]="miembro.avatar" alt="Avatar"
+             class="rounded-circle border border-2 border-primary"
+             width="56" height="56" style="object-fit:cover;">
+        <div>
+          <h6 class="fw-bold mb-1">{{ miembro.nombre }}</h6>
+          <small class="text-secondary d-block">{{ miembro.rol }}</small>
+          <span class="badge bg-primary mt-1">{{ miembro.xp }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
