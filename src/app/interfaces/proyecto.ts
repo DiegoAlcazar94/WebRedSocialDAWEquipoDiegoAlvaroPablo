@@ -5,4 +5,5 @@ export interface Proyecto {
   precio: number;
   imagen: string;
   autor: string;
+  categoria: string;
 }
