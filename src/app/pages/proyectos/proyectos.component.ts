@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
-import { ProjectsService, Project } from '../../services/projects.service';
+import { ProyectoService } from '../../services/proyecto.service';
+import { Proyecto } from '../../interfaces/proyecto';
 
 @Component({
   selector: 'app-proyectos',
   standalone: true,
-  imports: [NgFor, RouterLink, ProjectCardComponent],
+  imports: [NgFor, NgIf, RouterLink, ProjectCardComponent],
   templateUrl: './proyectos.component.html'
 })
 export class ProyectosComponent implements OnInit {
-  projects: Project[] = [];
-  filteredProjects: Project[] = [];
+  projects: Proyecto[] = [];
+  filteredProjects: Proyecto[] = [];
   filtroActivo: string = 'All';
 
-  filtros = ['All', 'Frontend', 'Backend', 'Fullstack', 'Mobile', 'GameDev'];
+  filtros = ['All', 'DAW', 'DAM'];
 
-  constructor(private projectsService: ProjectsService) {}
+  constructor(private proyectoService: ProyectoService) {}
 
   ngOnInit() {
-    this.projectsService.getProjects().subscribe(data => {
+    this.proyectoService.getProyectos().subscribe(data => {
       this.projects = data;
       this.filteredProjects = data;
     });
@@ -32,7 +33,7 @@ export class ProyectosComponent implements OnInit {
       this.filteredProjects = this.projects;
     } else {
       this.filteredProjects = this.projects.filter(p =>
-        p.tags.some(tag => tag.toLowerCase().includes(filtro.toLowerCase()))
+        p.categoria.toLowerCase() === filtro.toLowerCase()
       );
     }
   }
