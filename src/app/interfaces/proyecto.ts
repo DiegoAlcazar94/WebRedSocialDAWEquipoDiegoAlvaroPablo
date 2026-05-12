@@ -4,4 +4,5 @@ export interface Proyecto {
   descripcion: string;
   precio: number;
   imagen: string;
+  autor: string;
 }
