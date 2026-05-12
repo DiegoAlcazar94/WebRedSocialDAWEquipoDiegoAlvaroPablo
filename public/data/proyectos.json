@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "GestorAlumnos",
+    "descripcion": "Aplicación web para gestionar alumnos, notas y asistencia del instituto Progresa. Desarrollada como proyecto final del módulo de DAW.",
+    "precio": 0,
+    "imagen": "https://picsum.photos/seed/proj1/400/300",
+    "autor": "Diego Martínez",
+    "categoria": "DAW"
+  },
+  {
+    "id": 2,
+    "nombre": "TiendaTech",
+    "descripcion": "E-commerce de productos tecnológicos con carrito de compras, autenticación de usuarios y pasarela de pago simulada.",
+    "precio": 15,
+    "imagen": "https://picsum.photos/seed/proj2/400/300",
+    "autor": "Álvaro Rosillo",
+    "categoria": "DAW"
+  },
+  {
+    "id": 3,
+    "nombre": "AppInventario",
+    "descripcion": "Aplicación Android para gestión de inventario en almacenes, con lectura de códigos QR y sincronización en la nube.",
+    "precio": 20,
+    "imagen": "https://picsum.photos/seed/proj3/400/300",
+    "autor": "Pablo Sánchez",
+    "categoria": "DAM"
+  },
+  {
+    "id": 4,
+    "nombre": "PortafolioCreativo",
+    "descripcion": "Sitio web personal tipo portafolio para mostrar proyectos y habilidades. Diseño responsive con animaciones CSS avanzadas.",
+    "precio": 0,
+    "imagen": "https://picsum.photos/seed/proj4/400/300",
+    "autor": "Laura Gómez",
+    "categoria": "DAW"
+  },
+  {
+    "id": 5,
+    "nombre": "ChatInstantáneo",
+    "descripcion": "Sistema de mensajería en tiempo real utilizando WebSockets. Permite salas de chat grupales e historial de mensajes.",
+    "precio": 10,
+    "imagen": "https://picsum.photos/seed/proj5/400/300",
+    "autor": "Carlos Ruiz",
+    "categoria": "DAM"
+  },
+  {
+    "id": 6,
+    "nombre": "ReservasDeportivas",
+    "descripcion": "Plataforma web para reservar pistas deportivas del instituto. Incluye calendario interactivo y sistema de notificaciones.",
+    "precio": 5,
+    "imagen": "https://picsum.photos/seed/proj6/400/300",
+    "autor": "Ana Torres",
+    "categoria": "DAW"
+  }
+]
