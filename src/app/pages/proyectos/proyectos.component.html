@@ -32,10 +32,10 @@
     <div class="col-12 col-sm-6 col-lg-4" *ngFor="let project of filteredProjects">
       <app-project-card
         [id]="project.id"
-        [title]="project.title"
-        [description]="project.description"
-        [image]="project.image"
-        [tags]="project.tags">
+        [title]="project.nombre"
+        [description]="project.descripcion"
+        [image]="project.imagen"
+        [tags]="[project.categoria]">
       </app-project-card>
     </div>
   </div>
