@@ -8,6 +8,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { ProyectoDetalleComponent } from './pages/proyecto-detalle/proyecto-detalle.component';
 import { PagoComponent } from './pages/pago/pago.component';
 import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
