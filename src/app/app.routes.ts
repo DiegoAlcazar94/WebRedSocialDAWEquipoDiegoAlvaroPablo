@@ -20,5 +20,5 @@ export const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'pago', component: PagoComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', component: NotFoundComponent }
 ];
